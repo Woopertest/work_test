@@ -35,13 +35,12 @@ $(document).ready(function () {
         $(this).parent().find('.jq_flipInY').removeClass('flipOutY');
         $(this).parent().find('.jq_flipInY').addClass('flipInY');
         /*去除主體卷軸*/
-        $('body').css('overflow', 'hidden');
+        
     });
 
     $('.jq_close_works').click(function (e) { 
         e.preventDefault();
         $(this).parent().addClass('flipOutY');
-        $('body').css('overflow', 'auto');
     });
 
     $(window).scroll(function () { 
