@@ -108,7 +108,6 @@ h2:before{
 /*自訂樣式*/
 
 .wrap{
-  position: relative;
 	max-width: 100%;
   margin: 0 auto;
   overflow: hidden;
