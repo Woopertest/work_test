@@ -485,10 +485,6 @@ h2:before{
   width: 250px;
 }
 
-#works .works_box .jq_btn_works:hover{
-  transition: none;
-}
-
 #works .img_work{
   width: 250px;
   height: 200px;
