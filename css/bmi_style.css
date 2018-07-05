@@ -1,0 +1,334 @@
+@charset "utf-8";
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFangTC-Regular' , sans-serif;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+input[type=button],input[type=submit],button{
+  cursor: pointer;
+}
+
+/*  clearfix
+------------------------------*/
+.clearfix:after {/*for modern browser*/
+   content: "";
+   display: block;
+   clear: both;
+}
+
+.clearfix { *zoom:1; } /*for IE6,IE7*/
+
+/*自訂樣式*/
+
+.wrap{
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+/*#header區塊*/
+
+#header{
+    background: #424242;
+    text-align: center;
+    color: #FFD366;
+    padding: 20px 0;
+    box-sizing: border-box;    
+}
+
+#header h1 .header_logo{
+    width: 117px;
+    height: 117px;
+    display: block;
+    background: url(../images/BMICLogo.png) no-repeat;
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+#header .txt_bmi label{
+    display: block;
+    font-size: 18px;
+    margin-bottom: 7px;
+}
+
+#header .txt_bmi #txt_height, #header .txt_bmi #txt_weight{
+    width: 250px;
+    font-size: 24px;
+    color: #fff;
+    background-color: #424242;
+    border: 2px solid #FFD366;
+    border-radius: 10px;
+    padding: 4px 0 4px 16px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+#header .btn_result{
+    width: 120px;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1;
+    background-color: #FFD366;
+    border:none;
+    border-radius: 50%;
+    padding: 48px 23.5px;   
+}
+
+#header .btn_result:hover{
+  box-shadow: 0 1px 6px 3px rgba(255,195,49,0.64); 
+}
+
+#header .btn_result:active{
+  background: #DEA921;
+}
+
+#header .bmi_circle{
+  display: none;
+  position: relative;
+  width: 123px;
+  height: 123px;
+  font-size: 32px;
+  border: 6px solid;
+  border-radius: 50%;
+  padding-top: 41px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+#header .bmi_circle span{
+  display: block;
+  font-size: 14px;
+}
+
+#header .bmi_circle .icon_loop{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  background: url(../images/icons_loop.png) no-repeat center center;
+  border: 3px solid #424242;
+  border-radius: 50%;
+  padding: 5px 8px;
+  box-sizing: border-box;
+}
+
+#header .circle_range{
+  font-size: 32px;
+}
+
+@media (min-width: 667px){
+  #header{
+    text-align: left; 
+    padding: 0;
+  }
+
+  #header .bmi_inputdata{
+    width: 637px;
+    margin: 0 auto;
+  }
+
+  #header h1{
+    float: left;
+    margin: 90px 0;
+  }
+
+  #header .txt_bmi{
+    float: left;
+    margin: 72px 0;
+    margin-left: 14.54272%;
+    margin-right: 7.94602%;
+  }
+
+  #header .btn_result{ 
+    margin: 90px 0;
+  }
+
+  #header .bmi_circle{
+    float: left;
+    text-align: center;
+    margin-top: 90px;
+  }
+
+  #header .circle_range{
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 1024px){
+  #header .bmi_inputdata{
+    position: relative;
+  }
+
+  #header .circle_range{
+    position: absolute;
+    width: 100%;
+    text-align: left;
+    left: 104%;
+    top: 135px;
+    text-indent: 0;
+    overflow: auto;
+    white-space: normal
+  }
+}
+
+/*#main區塊*/
+
+#main{
+  background-color: #f5f5f5;
+  text-align: center;
+  font-family: 'SF Display', sans-serif;
+  font-size: 24px;
+  color: #424242;
+  padding: 20px 10px;
+}
+
+#main h2{
+  padding-bottom: 36px;
+}
+
+#main .histry li{
+  position: relative;
+  background-color: #fff;
+  border-left: 7px solid;
+  text-align: center;
+  padding: 21px 12px;
+  margin-bottom: 16px;
+}
+
+#main .histry li div{
+  font-size: 12px;
+}
+
+#main .histry li .condition{
+  float: left;
+  width: 33.33333%;
+  padding: 21px 0;
+}
+
+#main .histry span{
+  display: block;
+}
+
+#main .histry li div span{
+  font-size: 20px;
+}
+
+#main .histry li .range{
+  font-weight: bold;
+}
+
+#main .histry li .date_histry{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 2px;
+}
+
+@media (min-width: 767px){
+  #main .histry li{
+    position: relative;
+    padding: 21px 12px;
+    margin-bottom: 16px;
+  }
+
+  #main .histry li .condition{
+    float: left;
+    width: 20%;
+    vertical-align:text-top;
+    padding: 0;
+  }
+  
+  #main .histry span{
+    display: inline;
+    float: none;
+  }
+
+  #main .histry li .range{
+    width: 20%;
+    font-size: 20px;
+    float: left;
+  }
+  
+  #main .histry li .date_histry{
+    position: static;
+    padding: 0;
+    margin-top: 8px;
+  }
+
+  #main .histry li .btn_cross{
+    position: absolute;
+    right: 10px;
+    top: 21px;
+  }
+}
+
+/*#footer區塊*/
+
+#footer{
+  height: 90px;
+  background-color: #FFD366;
+  padding-top: 1em; 
+  box-sizing: border-box;
+}
+
+#footer .footer_logo{
+  width: 55px;
+  height: 55px;
+  background: url(../images/BMICLogo_black.png) no-repeat center center;
+  display: block;
+  text-indent: 101%;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0 auto;
+}
