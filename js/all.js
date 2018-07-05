@@ -32,15 +32,17 @@ $(document).ready(function () {
 
     $('.jq_btn_works').click(function (e) { 
         e.preventDefault();
-        $(this).parent().find('.jq_flipInY').removeClass('flipOutY');
-        $(this).parent().find('.jq_flipInY').addClass('flipInY');
+        $(this).parent().find('.jq_flipInY').removeClass('animated flipOutY');
+        $(this).parent().find('.jq_flipInY').addClass('animated flipInY');
+        $(this).parent().find('.jq_flipInY').css('display', 'block');
         /*去除主體卷軸*/
         $('body').css('overflow', 'hidden');
     });
 
     $('.jq_close_works').click(function (e) { 
         e.preventDefault();
-        $(this).parent().addClass('flipOutY');
+        $(this).parent().removeClass('animated flipInY');
+        $(this).parent().addClass('animated flipOutY');
         $('body').css('overflow', 'auto');
     });
 
