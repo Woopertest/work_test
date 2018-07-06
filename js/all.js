@@ -37,7 +37,7 @@ $(document).ready(function () {
         $(this).parent().find('.jq_flipInY').css('display', 'block');
         
         /*去除主體卷軸*/
-        $('html, body').css('overflow', 'hidden');
+        $("body").addClass('lock-position');
 
         /*for ios*/
         $('.img_bg').css('display', 'none');
@@ -48,8 +48,7 @@ $(document).ready(function () {
         e.preventDefault();
         $(this).parent().removeClass('animated flipInY');
         $(this).parent().addClass('animated flipOutY');
-        $('html, body').css('overflow', 'auto');
-
+        $("body").removeClass('lock-position');
         /*for ios*/
         setTimeout(function(){
             $('.img_bg').css('display', 'block');
