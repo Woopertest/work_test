@@ -31,7 +31,6 @@ body {
   line-height: 1;
   background-color: #fafafa;
   font-family: Microsoft JhengHei;
-  -webkit-overflow-scrolling: touch;
 }
 ol, ul {
   list-style: none;
