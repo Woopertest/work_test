@@ -38,6 +38,10 @@ $(document).ready(function () {
         
         /*去除主體卷軸*/
         $('body').css('overflow', 'hidden');
+
+        /*for ios*/
+        $('.img_bg').css('display', 'none');
+        $('.topbar').css('display', 'none');
     });
 
     $('.jq_close_works').click(function (e) { 
@@ -45,6 +49,10 @@ $(document).ready(function () {
         $(this).parent().removeClass('animated flipInY');
         $(this).parent().addClass('animated flipOutY');
         $('body').css('overflow', 'auto');
+
+        /*for ios*/
+        $('.img_bg').css('display', 'block');
+        $('.topbar').css('display', 'block');
     });
 
     $(window).scroll(function () { 
