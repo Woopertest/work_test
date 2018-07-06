@@ -54,7 +54,7 @@ $(document).ready(function () {
         setTimeout(function(){
             $('.img_bg').css('display', 'block');
             $('.topbar').css('display', 'block');
-        }, 3000);
+        }, 1000);
         
     });
 
