@@ -51,8 +51,11 @@ $(document).ready(function () {
         $('body').css('overflow', 'auto');
 
         /*for ios*/
-        $('.img_bg').css('display', 'block');
-        $('.topbar').css('display', 'block');
+        setTimeout(function(){
+            $('.img_bg').css('display', 'block');
+            $('.topbar').css('display', 'block');
+        }, 3000);
+        
     });
 
     $(window).scroll(function () { 
