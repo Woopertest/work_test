@@ -10,9 +10,9 @@ $(document).ready(function () {
     });
 
     $('.jq_close').click(function(e) {
-		e.preventDefault();
-		/* 關閉功能選單_index.html/.nav */
-		$('body').removeClass('open');
+        e.preventDefault();
+        /* 關閉功能選單_index.html/.nav */
+        $('body').removeClass('open');
     });
 
     /* nav選單指定滑動位置 */
@@ -35,6 +35,9 @@ $(document).ready(function () {
         $(this).parent().find('.jq_flipInY').removeClass('animated flipOutY');
         $(this).parent().find('.jq_flipInY').addClass('animated flipInY');
         $(this).parent().find('.jq_flipInY').css('display', 'block');
+
+        /*save scrollPos*/
+        $('body').attr('data-pos', $(window).scrollTop()) ;
         
         /*去除主體卷軸*/
         $("body").addClass('lock-position');
@@ -49,12 +52,15 @@ $(document).ready(function () {
         $(this).parent().removeClass('animated flipInY');
         $(this).parent().addClass('animated flipOutY');
         $("body").removeClass('lock-position');
+
+        /*go back scrollPos*/
+        $(window).scrollTop( $('body').attr('data-pos'));
+        
         /*for ios*/
         setTimeout(function(){
             $('.img_bg').css('display', 'block');
             $('.topbar').css('display', 'block');
         }, 1000);
-        
     });
 
     $(window).scroll(function () { 
